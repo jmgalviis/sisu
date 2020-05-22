@@ -15,7 +15,9 @@ class CreateTipoIncidenciasTable extends Migration
     {
         Schema::create('tipo_incidencias', function (Blueprint $table) {
             $table->id();
+            $table->string('name',100);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

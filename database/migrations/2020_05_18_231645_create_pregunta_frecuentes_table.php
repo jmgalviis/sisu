@@ -15,7 +15,10 @@ class CreatePreguntaFrecuentesTable extends Migration
     {
         Schema::create('pregunta_frecuentes', function (Blueprint $table) {
             $table->id();
+            $table->string('question',100);
+            $table->string('answer',100);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

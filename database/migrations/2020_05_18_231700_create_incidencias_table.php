@@ -15,7 +15,22 @@ class CreateIncidenciasTable extends Migration
     {
         Schema::create('incidencias', function (Blueprint $table) {
             $table->id();
+            $table->string('title',200);
+            $table->text('description');
+            $table->string('file',200);
+            $table->bigInteger('id_user');
+            $table->bigInteger('id_estado');
+            $table->bigInteger('id_tipo_incidencia');
+            $table->bigInteger('id_user_asignado')->nullable();
+
+            //Foranea usuario 
+            $table->foreign('id_user')->references('id')->on('users');
+            $table->foreign('id_estado')->references('id')->on('estados');
+            $table->foreign('id_tipo_incidencia')->references('id')->on('tipo_incidencias');
+            $table->foreign('id_user_asignado')->references('id')->on('users');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
