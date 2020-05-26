@@ -22,9 +22,9 @@
                             <div class="form-group">
                                 <label for="exampleInputTitulo
                                 ">Titulo</label>
-                                <input type="titulo" class="form-control @error('titulo') border-danger @enderror" name="titulo" value="{{ old('titulo') }}" id="titulo" aria-describedby="tituloHelp" placeholder="Ingresar titulo">
+                                <input type="text" class="form-control @error('titulo') border-danger @enderror" name="titulo" value="{{ old('titulo') }}" id="titulo" aria-describedby="tituloHelp" placeholder="Ingresar titulo">
                                 @error('titulo')
-                                 <div class="form-control-feedback text-danger">{{ $message }}</div>                                 
+                                 <div class="form-control-feedback text-danger">{{ $message }}</div>
                                 @enderror
                                 <small id="tituloHelp" class="form-text text-muted"></small>
                             </div>
@@ -34,9 +34,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputFile"></label>
-                                <input type="file" class="form-control-file" id="file" placeholder="">
+                                <input type="file" class="form-control-file" name="file" placeholder="">
                             </div>
-                            
+
                             <button type="submit" class="btn btn-primary btn-gradient btn-block">
                                 <i class="batch-icon batch-icon-quill"></i>
                                 Crear incidencia

@@ -18,6 +18,8 @@ class CreateComentariosTable extends Migration
             $table->string('comentario', 500);
             $table->bigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users');
+            $table->bigInteger('id_incidencia');
+            $table->foreign('id_incidencia')->references('id')->on('incidencias');
             $table->timestamps();
             $table->softDeletes();
         });

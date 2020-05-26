@@ -2,13 +2,19 @@
 
 namespace App;
 
+
+use Caffeinated\Shinobi\Concerns\HasRolesAndPermissions;
+use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+
+    use Notifiable, HasRolesAndPermissions, SoftDeletes;
+
 
     /**
      * The attributes that are mass assignable.
@@ -36,4 +42,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+
+
 }

@@ -3,7 +3,7 @@
 @section('content')
 @include('layouts.menu')
 <div class="right-column">
-	@include('layouts.navbar')
+	@include('layouts.usernavbar')
 	<main class="main-content p-5">
 		@yield('main')
 	</main>

@@ -13,18 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/formulario', function () {
-    return view('incidencia.formulario');
-});
-
-Route::get('/admin', function () {
-    return view('admin.index');
-});
-
+Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/incidencia', 'HomeController@create')->name('crear.incidencia');
+Route::post('/incidencia/guardar', 'HomeController@store')->name('guardar.incidencia');
+Route::get('/incidencia/{incidencia}', 'HomeController@show')->name('ver.incidencia');
+Route::post('/incidencia/comentario', 'HomeController@agregarcomentario')->name('agregar.comentario');
+
+Route::prefix('admin')->group(function (){
+    Route::middleware(['auth'])->group(function (){
+        Route::resources([
+            'users' => 'Admin\UserController',
+            'roles' => 'Admin\RoleController',
+            'incidencia' => 'Admin\IncidenciaController'
+        ]);
+
+        Route::get('/admin', 'Admin\AdminController@index')->name('index.admin');
+
+    });
+});
+

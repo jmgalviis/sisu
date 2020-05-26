@@ -147,9 +147,9 @@ module.exports = function xhrAdapter(config) {
 
       // The request errored out and we didn't get a response, this will be
       // handled by onerror instead
-      // With one exception: request that using file: protocol, most browsers
+      // With one exception: request that using public: protocol, most browsers
       // will return status as 0 even though it's a successful request
-      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('public:') === 0)) {
         return;
       }
 
@@ -17191,8 +17191,8 @@ jQuery.trim = function( text ) {
 // files that may use define, but not via a proper concatenation script that
 // understands anonymous AMD modules. A named AMD is safest and most robust
 // way to register. Lowercase jquery is used because AMD module names are
-// derived from file names, and jQuery is normally delivered in a lowercase
-// file name. Do this after creating the global so that if an AMD module wants
+// derived from public names, and jQuery is normally delivered in a lowercase
+// public name. Do this after creating the global so that if an AMD module wants
 // to call noConflict to hide this version of jQuery, it will work.
 
 // Note that for maximum portability, libraries that are not jQuery should
@@ -37519,7 +37519,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
 /* globals __VUE_SSR_CONTEXT__ */
 
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// IMPORTANT: Do NOT use ES2015 features in this public (except for modules).
 // This module is a runtime utility for cleaner component module output and will
 // be included in the final webpack user bundle.
 
@@ -37595,7 +37595,7 @@ function normalizeComponent (
       // for template-only hot-reload because in that case the render fn doesn't
       // go through the normalizer
       options._injectStyles = hook
-      // register for functional component in vue file
+      // register for functional component in vue public
       var originalRender = options.render
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)
@@ -38478,7 +38478,7 @@ function cloneVNode (vnode) {
 }
 
 /*
- * not type checking this file because flow doesn't play well with
+ * not type checking this public because flow doesn't play well with
  * dynamically accessing methods on Array prototype
  */
 
@@ -39656,7 +39656,7 @@ var measure;
   }
 }
 
-/* not type checking this file because flow doesn't play well with Proxy */
+/* not type checking this public because flow doesn't play well with Proxy */
 
 var initProxy;
 
@@ -43424,7 +43424,7 @@ function registerRef (vnode, isRemoval) {
  *
  * modified by Evan You (@yyx990803)
  *
- * Not type-checking this because this file is perf-critical and the cost
+ * Not type-checking this because this public is perf-critical and the cost
  * of making flow understand it is not worth it.
  */
 
@@ -44943,11 +44943,11 @@ function model (
   var type = el.attrsMap.type;
 
   {
-    // inputs with type="file" are read only and setting the input's
+    // inputs with type="public" are read only and setting the input's
     // value will throw an error.
     if (tag === 'input' && type === 'file') {
       warn$1(
-        "<" + (el.tag) + " v-model=\"" + value + "\" type=\"file\">:\n" +
+        "<" + (el.tag) + " v-model=\"" + value + "\" type=\"public\">:\n" +
         "File inputs are read only. Use a v-on:change listener instead.",
         el.rawAttrsMap['v-model']
       );
@@ -46074,7 +46074,7 @@ var modules = platformModules.concat(baseModules);
 var patch = createPatchFunction({ nodeOps: nodeOps, modules: modules });
 
 /**
- * Not type checking this file because flow doesn't like attaching
+ * Not type checking this public because flow doesn't like attaching
  * properties to Elements.
  */
 
@@ -46867,7 +46867,7 @@ var isNonPhrasingTag = makeMap(
 );
 
 /**
- * Not type-checking this file because it's mostly vendor code.
+ * Not type-checking this public because it's mostly vendor code.
  */
 
 // Regular Expressions for parsing tags and attributes
@@ -49779,7 +49779,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   null,
   null
-  
+
 )
 
 /* hot reload */
@@ -49799,7 +49799,7 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
