@@ -20,7 +20,7 @@ Route::get('/incidencia', 'HomeController@create')->name('crear.incidencia');
 Route::post('/incidencia/guardar', 'HomeController@store')->name('guardar.incidencia');
 Route::get('/incidencia/{incidencia}', 'HomeController@show')->name('ver.incidencia');
 Route::post('/incidencia/comentario', 'HomeController@agregarcomentario')->name('agregar.comentario');
-
+Route::get('/admin', 'Admin\AdminController@index')->name('index.admin');
 Route::prefix('admin')->group(function (){
     Route::middleware(['auth'])->group(function (){
         Route::resources([
@@ -29,7 +29,7 @@ Route::prefix('admin')->group(function (){
             'incidencia' => 'Admin\IncidenciaController'
         ]);
 
-        Route::get('/admin', 'Admin\AdminController@index')->name('index.admin');
+
 
     });
 });
