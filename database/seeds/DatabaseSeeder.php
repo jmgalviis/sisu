@@ -53,16 +53,20 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Estado::create([
-            'name' => 'Nueva'
+            'name' => 'Nueva',
+            'color' => 'badge-primary'
         ]);
         \App\Estado::create([
-            'name' => 'En espera'
+            'name' => 'En espera',
+            'color' => 'badge-warning'
         ]);
         \App\Estado::create([
-            'name' => 'Resuelta'
+            'name' => 'Resuelta',
+            'color' => 'badge-success'
         ]);
         \App\Estado::create([
-            'name' => 'Cerrada'
+            'name' => 'Cerrada',
+            'color' => 'badge-secondary'
         ]);
     }
 }
